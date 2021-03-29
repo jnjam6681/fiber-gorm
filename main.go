@@ -22,7 +22,7 @@ func initDatabase() {
 	var err error
 
 	// dsn := "root:root@tcp(127.0.0.1:3306)/fiber-gorm?charset=utf8mb4&parseTime=True&loc=Local"
-	database.DB, err = gorm.Open("mysql", "root:root@tcp(127.0.0.1:3306)/fiber-gorm?charset=utf8mb4&parseTime=True&loc=Local")
+	database.DB, err = gorm.Open("mysql", "root:root@tcp(mysql:3306)/fiber-gorm?charset=utf8mb4&parseTime=True&loc=Local")
 	// db, err := gorm.Open(mysql.Open("books.db"), &gorm.Config{})
 	// db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 

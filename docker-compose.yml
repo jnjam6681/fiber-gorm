@@ -18,6 +18,7 @@ services:
   fiber:
     container_name: fiber-gorm
     build: .
+    restart: always
     ports:
       - "3000:3000"
     depends_on:
