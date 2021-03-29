@@ -1,3 +1,6 @@
 .git
+.gitignore
 docker-compose.yml
 backup
+Makefile
+Dockerfile
