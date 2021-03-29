@@ -1,0 +1,29 @@
+version: '2.4'
+
+services:
+  mysql:
+    container_name: mysql-gorm
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fiber-gorm
+    volumes:
+      - "./backup/mysql:/var/lib/mysql"
+    networks:
+      - fiber-gorm
+  fiber:
+    container_name: fiber-gorm
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    networks:
+      - fiber-gorm
+    
+networks:
+  fiber-gorm:
